@@ -10,10 +10,10 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
+    let DATA: [String] = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5"]
     let NUMBER_OF_SECTIONS: Int = 1
-    let NUMBER_OF_ROWS: Int = 100
     let CELL_ID: String = "cell"
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,7 +33,7 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return NUMBER_OF_ROWS
+        return DATA.count
     }
 
     
@@ -41,7 +41,7 @@ class TableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ID, for: indexPath)
 
         // Configure the cell...
-        cell.textLabel?.text = "Cell Content Placeholder"
+        cell.textLabel?.text = DATA[indexPath.row]
 
         return cell
     }
