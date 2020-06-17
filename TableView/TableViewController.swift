@@ -9,6 +9,10 @@
 import UIKit
 
 class TableViewController: UITableViewController {
+    
+    let NUMBER_OF_SECTIONS: Int = 1
+    let NUMBER_OF_ROWS: Int = 100
+    let CELL_ID: String = "cell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,23 +28,24 @@ class TableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return NUMBER_OF_SECTIONS
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return NUMBER_OF_ROWS
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ID, for: indexPath)
 
         // Configure the cell...
+        cell.textLabel?.text = "Cell Content Placeholder"
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
