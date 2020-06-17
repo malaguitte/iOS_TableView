@@ -15,6 +15,8 @@ class TableViewController: UITableViewController {
     let CELL_ID: String = "cell"
     let SHOW_DETAIL_ID = "showDetail"
     
+    var currentItem: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -85,6 +87,7 @@ class TableViewController: UITableViewController {
 
     // MARK: - Navigation
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        currentItem = DATA[indexPath.row]
         performSegue(withIdentifier: SHOW_DETAIL_ID, sender: nil)
     }
 
@@ -92,6 +95,10 @@ class TableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        if let viewController = segue.destination as? ViewController {
+            viewController.currentItemInfo = currentItem
+        }
     }
 
 }
