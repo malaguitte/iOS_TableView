@@ -27,7 +27,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="w6A-CR-xht"/>
+                    <navigationItem key="navigationItem" title="Item" largeTitleDisplayMode="never" id="w6A-CR-xht"/>
                     <connections>
                         <outlet property="textView" destination="kxk-5V-1Wx" id="hFn-5k-xbe"/>
                     </connections>
